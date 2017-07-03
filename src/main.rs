@@ -40,7 +40,7 @@ fn main() {
 
     // initial setup
     {
-        shaders::add_custom_shaders(&game.renderer.display, &mut game.renderer.shaders);
+        shaders::add_custom_shaders(&mut game);
         
         game.renderer.post_effect.post_shader_options = PostShaderOptionsBuilder::default()
             .chrom_amt(1f32)

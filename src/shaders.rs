@@ -1,9 +1,9 @@
-use caper::shader::*;
-use caper::glium::Display;
+use caper::shader::default;
+use caper::game::Game;
 
-
-
-pub fn add_custom_shaders(display: &Display, shaders: &mut Shaders) {
+pub fn add_custom_shaders(game: &mut Game) {
+    let mut shaders = &mut game.renderer.shaders;
+    let display = &game.renderer.display;
     let _ = shaders.add_shader(display, "tubular",
                                default::gl330::VERT, tubular::FRAG,
                                tubular::GEOM, tubular::TESS_CONTROL,
